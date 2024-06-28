@@ -17,7 +17,7 @@ from utils import temp
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from info import *
 
-MAX = 2 * 1024 * 1024 * 1024
+MAX = 3 * 1024 * 1024 * 1024
 FINISHED_PROGRESS_STR = "🟨"
 UN_FINISHED_PROGRESS_STR = "⬜"
 DOWNLOAD_LOCATION = "/app"
@@ -297,13 +297,13 @@ async def progress_for_pyrogram(
 def humanbytes(size):
     if not size:
         return ""
-    power = 2**10
+    power = 3**10
     n = 0
     Dic_powerN = {0: ' ', 1: 'Ki', 2: 'Mi', 3: 'Gi', 4: 'Ti'}
     while size > power:
         size /= power
         n += 1
-    return str(round(size, 2)) + " " + Dic_powerN[n] + 'B'
+    return str(round(size, 3)) + " " + Dic_powerN[n] + 'B'
 
 
 def TimeFormatter(milliseconds: int) -> str:
