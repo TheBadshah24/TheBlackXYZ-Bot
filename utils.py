@@ -484,13 +484,13 @@ def remove_escapes(text: str) -> str:
 def humanbytes(size):
     if not size:
         return ""
-    power = 2**10
+    power = 3**10
     n = 0
     Dic_powerN = {0: ' ', 1: 'Ki', 2: 'Mi', 3: 'Gi', 4: 'Ti'}
     while size > power:
         size /= power
         n += 1
-    return str(round(size, 2)) + " " + Dic_powerN[n] + 'B'
+    return str(round(size, 3)) + " " + Dic_powerN[n] + 'B'
 
 async def get_shortlink(chat_id, link):
     settings = await get_settings(chat_id) #fetching settings for group
